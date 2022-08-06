@@ -1,0 +1,37 @@
+server:
+  port: 8181
+spring:
+  application:
+    name: xyl_delivery
+  datasource:
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/db_delivery?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: 123456
+      # ????
+  mail:
+    host: smtp.163.com  # ??????????
+    username: xlei1812023@163.com # ??163?????
+    password: XTZMIJKGMWDXDVRI  # ?? IMAP/SMTP?? ??????,???163???????
+    default-encoding: UTF-8
+
+  redis:
+    host: localhost # ??IP ?? ???IP
+    port: 6379
+    #    password: root
+    database: 0  # ???? 0?db
+  cache:
+    redis:
+      time-to-live: 1800000  # ????????????30??
+
+mybatis-plus:
+  configuration:
+    #???????????????????????????????????????
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+upload:
+  filePath: E:\maven_project\mydelivery\project_images\img
